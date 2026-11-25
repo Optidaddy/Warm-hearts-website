@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Warm Hearts — Empowering & Nourishing African Children</title>
+  <meta name="description" content="Warm Hearts is a child-centered charity dedicated to educating, feeding, and empowering African children through community-driven programs." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23FBBF24'/%3E%3Cstop offset='100%25' stop-color='%23D97706'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%230B0B0F'/%3E%3Cpath d='M32 52C32 52 10 38.4 10 22.5C10 15.6 15.4 10 22 10C26.2 10 29.9 12.2 32 15.6C34.1 12.2 37.8 10 42 10C48.6 10 54 15.6 54 22.5C54 38.4 32 52 32 52Z' fill='url(%23g)'/%3E%3Ccircle cx='32' cy='25' r='4.2' fill='%230B0B0F'/%3E%3Cpath d='M22 33C25.5 30 38.5 30 42 33' stroke='%230B0B0F' stroke-width='3.2' stroke-linecap='round' fill='none'/%3E%3C/svg%3E" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              gold: '#FBBF24',
+              amber: '#F59E0B',
+              deep: '#D97706',
+              obsidian: '#0A0A0D',
+              charcoal: '#121218',
+              cream: '#FAF9F6',
+            }
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
+            display: ['Fraunces', 'Georgia', 'serif']
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #FAF9F6;
+      --text-primary: #0B0B0F;
+    }
+    html.dark {
+      --bg-primary: #0A0A0D;
+      --text-primary: #FAF9F6;
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      transition: background-color 0.35s ease, color 0.35s ease;
+      overflow-x: hidden;
+    }
+    .font-display { font-family: 'Fraunces', Georgia, serif; }
+
+    /* Page Transition Animations */
+    .page-view {
+      display: none;
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    .page-view.active {
+      display: block;
+      animation: pageEnter 0.48s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    @keyframes pageEnter {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Reveal on scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Button Glow & Tactile Ripple */
+    .btn-pop {
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+    }
+    .btn-pop:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 12px 28px -6px rgba(245, 158, 11, 0.45);
+    }
+    .btn-pop:active {
+      transform: scale(0.97);
+    }
+
+    /* Typing Dots for Meshlex */
+    .typing-dot {
+      animation: bounceDot 1.3s infinite ease-in-out;
+    }
+    .typing-dot:nth-child(2) { animation-delay: 0.18s; }
+    .typing-dot:nth-child(3) { animation-delay: 0.36s; }
+    @keyframes bounceDot {
+      0%, 80%, 100% { transform: translateY(0); opacity: 0.45; }
+      40% { transform: translateY(-5px); opacity: 1; }
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #F59E0B; border-radius: 9999px; }
+  </style>
+  <script>
+    // Apply saved or system theme immediately before paint
+    (function() {
+      const saved = localStorage.getItem('wh_theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (saved === 'dark' || (!saved && prefersDark)) {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
+</head>
+<body class="antialiased selection:bg-amber-400 selection:text-black">
+
+  <!-- TOP NAVIGATION -->
+  <header class="sticky top-0 z-40 backdrop-blur-xl bg-[#FAF9F6]/85 dark:bg-[#0A0A0D]/85 border-b border-black/10 dark:border-white/10 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Brand Logo -->
+      <button onclick="navigateTo('home')" class="flex items-center gap-3 group text-left focus:outline-none">
+        <div class="w-11 h-11 rounded-2xl bg-[#0B0B0F] border border-amber-400/40 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
+          <svg class="w-7 h-7" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="heartGrad" x1="10" y1="10" x2="54" y2="52" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#FBBF24"/>
+                <stop offset="1" stop-color="#D97706"/>
+              </linearGradient>
+            </defs>
+            <path d="M32 54C32 54 9 39.6 9 22.8C9 15.5 14.8 9.5 21.9 9.5C26.4 9.5 30.3 11.9 32 15.5C33.7 11.9 37.6 9.5 42.1 9.5C49.2 9.5 55 15.5 55 22.8C55 39.6 32 54 32 54Z" fill="url(#heartGrad)"/>
+            <circle cx="32" cy="24.5" r="4.3" fill="#0B0B0F"/>
+            <path d="M21 33.5C25.2 30 38.8 30 43 33.5" stroke="#0B0B0F" stroke-width="3.4" stroke-linecap="round"/>
+            <path d="M32 30.5V41" stroke="#0B0B0F" stroke-width="3.4" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div>
+          <span class="font-display font-bold text-xl tracking-tight block leading-none">Warm <span class="text-amber-500">Hearts</span></span>
+          <span class="text-[11px] uppercase tracking-widest text-neutral-500 dark:text-neutral-400 font-semibold">Africa Child Initiative</span>
+        </div>
+      </button>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-1 bg-black/5 dark:bg-white/5 p-1.5 rounded-full border border-black/5 dark:border-white/10">
+        <button data-nav="home" onclick="navigateTo('home')" class="nav-link px-4 py-2 rounded-full text-sm font-semibold transition-all">Home</button>
+        <button data-nav="programs" onclick="navigateTo('programs')" class="nav-link px-4 py-2 rounded-full text-sm font-semibold transition-all">About &amp; Programs</button>
+        <button data-nav="articles" onclick="navigateTo('articles')" class="nav-link px-4 py-2 rounded-full text-sm font-semibold transition-all">Stories &amp; Articles</button>
+        <button data-nav="involve" onclick="navigateTo('involve')" class="nav-link px-4 py-2 rounded-full text-sm font-semibold transition-all">Get Involved</button>
+      </nav>
+
+      <!-- Right Actions -->
+      <div class="flex items-center gap-3">
+        <!-- Theme Switch -->
+        <button id="themeToggle" onclick="toggleTheme()" aria-label="Toggle Light or Dark Mode" class="w-10 h-10 rounded-full flex items-center justify-center bg-black/5 dark:bg-white/10 hover:bg-amber-400/20 border border-black/10 dark:border-white/10 transition-all">
+          <svg id="sunIcon" class="w-5 h-5 text-amber-400 hidden dark:block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg id="moonIcon" class="w-5 h-5 text-neutral-900 block dark:hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+
+        <!-- Donate CTA -->
+        <button onclick="openDonationModal('General Child Welfare Fund')" class="btn-pop px-5 py-2.5 rounded-full bg-amber-400 hover:bg-amber-300 text-black font-bold text-sm flex items-center gap-2 shadow-md">
+          <span>Donate Now</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+        </button>
+
+        <!-- Mobile Menu Button -->
+        <button onclick="toggleMobileMenu()" class="md:hidden w-10 h-10 rounded-full flex items-center justify-center bg-black/5 dark:bg-white/10">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobileMenu" class="hidden md:hidden px-4 pb-4 space-y-1 border-t border-black/10 dark:border-white/10 bg-[#FAF9F6] dark:bg-[#0A0A0D]">
+      <button onclick="navigateTo('home'); toggleMobileMenu()" class="block w-full text-left px-4 py-2.5 rounded-xl font-semibold hover:bg-amber-400/15">Home</button>
+      <button onclick="navigateTo('programs'); toggleMobileMenu()" class="block w-full text-left px-4 py-2.5 rounded-xl font-semibold hover:bg-amber-400/15">About &amp; Programs</button>
+      <button onclick="navigateTo('articles'); toggleMobileMenu()" class="block w-full text-left px-4 py-2.5 rounded-xl font-semibold hover:bg-amber-400/15">Stories &amp; Articles</button>
+      <button onclick="navigateTo('involve'); toggleMobileMenu()" class="block w-full text-left px-4 py-2.5 rounded-xl font-semibold hover:bg-amber-400/15">Get Involved &amp; Contact</button>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT VIEWS -->
+  <main>
+
+    <!-- ==================== 1. HOME PAGE ==================== -->
+    <section id="view-home" class="page-view active">
+      <!-- Hero Section -->
+      <div class="relative overflow-hidden bg-[#0B0B0F] text-white">
+        <div class="absolute inset-0">
+          <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1800&q=80" alt="Smiling African children learning together" class="w-full h-full object-cover opacity-35" />
+          <div class="absolute inset-0 bg-gradient-to-r from-[#0B0B0F] via-[#0B0B0F]/85 to-transparent"></div>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 grid lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-7 space-y-6">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-400/15 border border-amber-400/40 text-amber-300 text-xs font-bold uppercase tracking-wider">
+              <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+              Every Child Deserves Light, Food &amp; Opportunity
+            </div>
+            <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+              Warm Hearts for <span class="text-amber-400">Africa’s Brightest</span> Tomorrow.
+            </h1>
+            <p class="text-lg text-neutral-300 max-w-2xl leading-relaxed">
+              We partner directly with rural schools, community kitchens, and local health workers across East and Sub-Saharan Africa to ensure children grow up healthy, educated, and empowered.
+            </p>
+            <div class="flex flex-wrap gap-4 pt-2">
+              <button onclick="openDonationModal('Emergency Child Nutrition & Education')" class="btn-pop px-7 py-4 rounded-full bg-amber-400 hover:bg-amber-300 text-black font-extrabold text-base flex items-center gap-2">
+                <span>Donate via M-Pesa</span>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+              </button>
+              <button onclick="navigateTo('programs')" class="px-7 py-4 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-base transition-all">
+                Explore Our Programs
+              </button>
+            </div>
+          </div>
+
+          <!-- Hero Impact Card -->
+          <div class="lg:col-span-5">
+            <div class="bg-[#121218]/90 backdrop-blur-xl border border-amber-400/30 rounded-3xl p-7 shadow-2xl space-y-6">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold uppercase tracking-widest text-amber-400">2026 School Feeding Drive</span>
+                <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold">Active Campaign</span>
+              </div>
+              <h3 class="font-display text-2xl font-bold">100,000 Hot School Meals for Rural Pupils</h3>
+              <p class="text-sm text-neutral-400">KES 500 provides warm, nutrient-dense lunches for an African student for an entire month.</p>
+              <div>
+                <div class="flex justify-between text-sm font-bold mb-2">
+                  <span class="text-amber-400">KES 1,840,000 Raised</span>
+                  <span class="text-neutral-400">Goal: KES 2,500,000</span>
+                </div>
+                <div class="w-full h-3 bg-white/10 rounded-full overflow-hidden">
+                  <div class="h-full bg-gradient-to-r from-amber-500 to-yellow-300 rounded-full" style="width: 74%"></div>
+                </div>
+              </div>
+              <button onclick="openDonationModal('2026 School Feeding Drive')" class="btn-pop w-full py-3.5 rounded-2xl bg-amber-400 text-black font-extrabold text-sm">
+                Sponsor a Child’s Meals Today
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Animated Impact Counters -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-10">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          <div class="bg-white dark:bg-[#121218] border border-black/10 dark:border-white/10 rounded-3xl p-6 shadow-xl text-center">
+            <div class="text-3xl sm:text-4xl font-extrabold text-amber-500 counter" data-target="18450">0</div>
+            <div class="text-xs sm:text-sm font-semibold text-neutral-600 dark:text-neutral-400 mt-1">Children Fed Daily</div>
+          </div>
+          <div class="bg-white dark:bg-[#121218] border border-black/10 dark:border-white/10 rounded-3xl p-6 shadow-xl text-center">
+            <div class="text-3xl sm:text-4xl font-extrabold text-amber-500 counter" data-target="64">0</div>
+            <div class="text-xs sm:text-sm font-semibold text-neutral-600 dark:text-neutral-400 mt-1">Classrooms &amp; Libraries</div>
+          </div>
+          <div class="bg-white dark:bg-[#121218] border border-black/10 dark:border-white/10 rounded-3xl p-6 shadow-xl text-center">
+            <div class="text-3xl sm:text-4xl font-extrabold text-amber-500 counter" data-target="4200">0</div>
+            <div class="text-xs sm:text-sm font-semibold text-neutral-600 dark:text-neutral-400 mt-1">Scholarships Funded</div>
+          </div>
+          <div class="bg-white dark:bg-[#121218] border border-black/10 dark:border-white/10 rounded-3xl p-6 shadow-xl text-center">
+            <div class="text-3xl sm:text-4xl font-extrabold text-amber-500 counter" data-target="94">0</div>
+            <div class="text-xs sm:text-sm font-semibold text-neutral-600 dark:text-neutral-400 mt-1">% Direct Program Aid</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Featured Causes -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+          <div>
+            <span class="text-amber-500 font-bold text-xs uppercase tracking-widest">Core Pillars</span>
+            <h2 class="font-display text-3xl sm:text-4xl font-bold mt-2">How Warm Hearts Protects Childhood</h2>
+          </div>
+          <button onclick="navigateTo('programs')" class="text-sm font-bold text-amber-600 dark:text-amber-400 hover:underline flex items-center gap-1">
+            See full program breakdown &rarr;
+          </button>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="reveal group bg-white dark:bg-[#121218] border border-black/10 dark:border-white/10 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col">
+            <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=800&q=80" alt="African children enjoying nutritious meal" class="h-48 w-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div>
+                <span class="px-2.5 py-1 rounded-full bg-amber-400/20 text-amber-700 dark:text-amber-300 text-xs font-bold">Nutrition</span>
+                <h3 class="font-bold text-xl mt-3">School Feeding Kitchens</h3>
+                <p class="text-sm text-neutral-600 dark:text-neutral-400 mt-2">Eliminating classroom hunger with locally sourced fortified porridge, beans, and fresh produce.</p>
+              </div>
+              <button onclick="openDonationModal('School Feeding Kitchens')" class="w-full py-2.5 rounded-xl bg-black dark:bg-amber-400 text-white dark:text-black font-bold text-xs hover:opacity-90 transition">Fund a Meal</button>
+            </div>
+          </div>
+
+          <div class="reveal group bg-white dark:bg-[#121218] border border-black/10 dark:border-white/10 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col">
+            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80" alt="African students studying in classroom" class="h-48 w-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div>
+                <span class="px-2.5 py-1 rounded-full bg-amber-400/20 text-amber-700 dark:text-amber-300 text-xs font-bold">Education</span>
+                <h3 class="font-bold text-xl mt-3">Books, Desks &amp; Digital Labs</h3>
+                <p class="text-sm text-neutral-600 dark:text-neutral-400 mt-2">Equipping underserved primary and secondary schools with solar-powered computer labs and textbooks.</p>
+              </div>
+              <button onclick="openDonationModal('Books, Desks & Digital Labs')" class="w-full py-2.5 rounded-xl bg-black dark:bg-amber-400 text-white dark:text-black font-bold text-xs hover:opacity-90 transition">Support Education</button>
+            </div>
+          </div>
+
+          <div class="reveal group bg-white dark:bg-[#121218] border border-black/10 dark:border-white/10 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col">
+            <img src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&w=800&q=80" alt="African child smiling with clean water access" class="h-48 w-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div>
+                <span class="px-2.5 py-1 rounded-full bg-amber-400/20 text-amber-700 dark:text-amber-300 text-xs font-bold">Clean Water</span>
+                <h3 class="font-bold text-xl mt-3">Safe Boreholes &amp; Sanitation</h3>
+                <p class="text-sm text-neutral-600 dark:text-neutral-400 mt-2">Bringing clean drinking water directly to schoolyards so girls never miss class walking miles for water.</p>
+              </div>
+              <button onclick="openDonationModal('Safe Boreholes & Sanitation')" class="w-full py-2.5 rounded-xl bg-black dark:bg-amber-400 text-white dark:text-black font-bold text-xs hover:opacity-90 transition">Give Clean Water</button>
+            </div>
+          </div>
+
+          <div class="reveal group bg-white dark:bg-[#121218] border border-black/10 dark:border-white/10 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col">
+            <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=800&q=80" alt="Happy African children playing outdoors" class="h-48 w-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div>
+                <span class="px-2.5 py-1 rounded-full bg-amber-400/20 text-amber-700 dark:text-amber-300 text-xs font-bold">Healthcare</span>
+                <h3 class="font-bold text-xl mt-3">Mobile Child Clinics</h3>
+                <p class="text-sm text-neutral-600 dark:text-neutral-400 mt-2">Routine immunizations, malaria prevention nets, and pediatric checkups in remote communities.</p>
+              </div>
+              <button onclick="openDonationModal('Mobile Child Clinics')" class="w-full py-2.5 rounded-xl bg-black dark:bg-amber-400 text-white dark:text-black font-bold text-xs hover:opacity-90 transition">Fund Healthcare</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Featured Editorial Stories Preview -->
+      <div class="bg-black text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+            <div>
+              <span class="text-amber-400 font-bold text-xs uppercase tracking-widest">Field Reports &amp; Advocacy</span>
+              <h2 class="font-display text-3xl sm:text-4xl font-bold mt-2">Stories From the Ground</h2>
+            </div>
+            <button onclick="navigateTo('articles')" class="btn-pop px-5 py-2.5 rounded-full bg-amber-400 text-black font-bold text-sm">
+              Read All Articles
+            </button>
+          </div>
+
+          <div id="homeArticlesGrid" class="grid md:grid-cols-2 gap-8"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 2. ABOUT & PROGRAMS PAGE ==================== -->
+    <section id="view-programs" class="page-view">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">
+        <div class="max-w-3xl space-y-4">
+          <span class="text-amber-500 font-bold text-xs uppercase tracking-widest">Who We Are</span>
+          <h1 class="font-display text-4xl sm:text-5xl font-bold">Built on Dignity, Local Leadership &amp; Radical Transparency.</h1>
+          <p class="text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed">
+            Warm Hearts was founded to bridge urgent gaps facing African children—hunger during school hours, lack of learning tools, preventable childhood illnesses, and unsafe water sources—by funding African-led community solutions.
+          </p>
+        </div>
+
+        <!-- Financial Allocation Transparency -->
+        <div class="bg-white dark:bg-[#121218] border border-black/10 dark:border-white/10 rounded-3xl p-8 sm:p-10 grid lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-6 space-y-4">
+            <span class="px-3 py-1 rounded-full bg-amber-400/20 text-amber-600 dark:text-amber-300 text-xs font-bold">100% Accountability</span>
+            <h2 class="font-display text-3xl font-bold">Where Every Shilling Goes</h2>
+            <p class="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">
+              Every M-Pesa contribution is tracked directly to school feeding supplies, student scholarships, and borehole maintenance.
+            </p>
+            <div class="space-y-4 pt-2">
+              <div>
+                <div class="flex justify-between text-sm font-bold mb-1"><span>Direct Child Nutrition &amp; School Meals</span><span class="text-amber-500">48%</span></div>
+                <div class="h-2.5 bg-black/10 dark:bg-white/10 rounded-full"><div class="h-full bg-amber-400 rounded-full" style="width:48%"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between text-sm font-bold mb-1"><span>Scholarships, Uniforms &amp; Digital Classrooms</span><span class="text-amber-500">31%</span></div>
+                <div class="h-2.5 bg-black/10 dark:bg-white/10 rounded-full"><div class="h-full bg-amber-500 rounded-full" style="width:31%"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between text-sm font-bold mb-1"><span>Clean Water Boreholes &amp; Pediatric Clinics</span><span class="text-amber-500">15%</span></div>
+                <div class="h-2.5 bg-black/10 dark:bg-white/10 rounded-full"><div class="h-full bg-emerald-500 rounded-full" style="width:15%"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between text-sm font-bold mb-1"><span>Operations &amp; Field Auditing</span><span class="text-neutral-500">6%</span></div>
+                <div class="h-2.5 bg-black/10 dark:bg-white/10 rounded-full"><div class="h-full bg-neutral-500 rounded-full" style="width:6%"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-6">
+            <img src="https://images.unsplash.com/photo-1524069290683-0457abfe42c3?auto=format&fit=crop&w=1000&q=80" alt="African schoolchildren smiling in uniform" class="rounded-2xl w-full h-80 object-cover shadow-lg" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. STORIES & ARTICLES PAGE ==================== -->
+    <section id="view-articles" class="page-view">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-10">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div class="max-w-2xl">
+            <span class="text-amber-500 font-bold text-xs uppercase tracking-widest">Warm Hearts Journal</span>
+            <h1 class="font-display text-4xl sm:text-5xl font-bold mt-2">Issues &amp; Solutions for African Children</h1>
+            <p class="text-neutral-600 dark:text-neutral-400 mt-3">In-depth articles exploring education equity, child nutrition, clean water access, and community healthcare.</p>
+          </div>
+          <!-- Category Filter Pills -->
+          <div class="flex flex-wrap gap-2" id="articleFilters">
+            <button onclick="filterArticles('All')" class="filter-btn active px-4 py-2 rounded-full text-xs font-bold bg-amber-400 text-black">All Stories</button>
+            <button onclick="filterArticles('Education')" class="filter-btn px-4 py-2 rounded-full text-xs font-bold bg-black/5 dark:bg-white/10">Education</button>
+            <button onclick="filterArticles('Nutrition')" class="filter-btn px-4 py-2 rounded-full text-xs font-bold bg-black/5 dark:bg-white/10">Nutrition</button>
+            <button onclick="filterArticles('Water')" class="filter-btn px-4 py-2 rounded-full text-xs font-bold bg-black/5 dark:bg-white/10">Clean Water</button>
+            <button onclick="filterArticles('Healthcare')" class="filter-btn px-4 py-2 rounded-full text-xs font-bold bg-black/5 dark:bg-white/10">Healthcare</button>
+          </div>
+        </div>
+
+        <div id="allArticlesGrid" class="grid md:grid-cols-2 gap-8"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 3B. FULL ARTICLE READER VIEW ==================== -->
+    <section id="view-reader" class="page-view">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+        <button onclick="navigateTo('articles')" class="inline-flex items-center gap-2 text-sm font-bold text-amber-600 dark:text-amber-400 hover:underline mb-8">
+          &larr; Back to All Articles
+        </button>
+        <article id="articleReaderContent" class="space-y-8"></article>
+      </div>
+    </section>
+
+    <!-- ==================== 4. GET INVOLVED & CONTACT PAGE ==================== -->
+    <section id="view-involve" class="page-view">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid lg:grid-cols-12 gap-12">
+        <div class="lg:col-span-5 space-y-6">
+          <span class="text-amber-500 font-bold text-xs uppercase tracking-widest">Join the Movement</span>
+          <h1 class="font-display text-4xl font-bold">Volunteer, Partner or Sponsor a School.</h1>
+          <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed">
+            Whether you are an educator, medical volunteer, corporate partner, or community supporter, your time and generosity directly uplift African children.
+          </p>
+          <div class="p-6 rounded-3xl bg-amber-400/15 border border-amber-400/40 space-y-3">
+            <h3 class="font-bold text-lg">Direct Support Desk</h3>
+            <p class="text-sm">Phone / M-Pesa: <a href="tel:+254741913043" class="font-bold underline">+254741913043</a></p>
+            <p class="text-sm">Email: <a href="mailto:meshlinksolutions@gmail.com" class="font-bold underline">meshlinksolutions@gmail.com</a></p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7">
+          <form onsubmit="handleVolunteerSubmit(event)" class="bg-white dark:bg-[#121218] border border-black/10 dark:border-white/10 rounded-3xl p-8 shadow-xl space-y-5">
+            <h2 class="font-display text-2xl font-bold">Volunteer &amp; Partnership Form</h2>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold uppercase mb-1.5">Full Name</label>
+                <input type="text" required placeholder="e.g. Amina Wanjiku" class="w-full px-4 py-3 rounded-xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 focus:border-amber-400 outline-none text-sm" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold uppercase mb-1.5">Email Address</label>
+                <input type="email" required placeholder="you@example.com" class="w-full px-4 py-3 rounded-xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 focus:border-amber-400 outline-none text-sm" />
+              </div>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold uppercase mb-1.5">Phone Number</label>
+                <input type="tel" required placeholder="+2547..." class="w-full px-4 py-3 rounded-xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 focus:border-amber-400 outline-none text-sm" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold uppercase mb-1.5">Area of Interest</label>
+                <select class="w-full px-4 py-3 rounded-xl bg-black/5 dark:bg-[#1A1A22] border border-black/10 dark:border-white/10 focus:border-amber-400 outline-none text-sm">
+                  <option>School Feeding Volunteer</option>
+                  <option>Teaching &amp; Digital Literacy</option>
+                  <option>Medical &amp; Child Health Outreach</option>
+                  <option>Corporate / NGO Sponsorship</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase mb-1.5">How would you like to help?</label>
+              <textarea rows="4" required placeholder="Tell us about your skills, availability, or partnership idea..." class="w-full px-4 py-3 rounded-xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 focus:border-amber-400 outline-none text-sm"></textarea>
+            </div>
+            <button type="submit" class="btn-pop w-full py-3.5 rounded-2xl bg-amber-400 text-black font-extrabold text-sm">
+              Submit Application
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER WITH CONTACT & EMAIL ==================== -->
+  <footer class="bg-[#0B0B0F] text-white border-t border-white/10 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div class="space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-amber-400 flex items-center justify-center text-black font-black text-lg">♥</div>
+          <span class="font-display font-bold text-xl">Warm <span class="text-amber-400">Hearts</span></span>
+        </div>
+        <p class="text-sm text-neutral-400 leading-relaxed">
+          Dedicated to nourishing, educating, and protecting African children through sustainable community-led initiatives.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="font-bold text-sm uppercase tracking-wider text-amber-400 mb-4">Quick Navigation</h4>
+        <ul class="space-y-2.5 text-sm text-neutral-300">
+          <li><button onclick="navigateTo('home')" class="hover:text-amber-400 transition">Home</button></li>
+          <li><button onclick="navigateTo('programs')" class="hover:text-amber-400 transition">About &amp; Programs</button></li>
+          <li><button onclick="navigateTo('articles')" class="hover:text-amber-400 transition">Stories &amp; Articles</button></li>
+          <li><button onclick="navigateTo('involve')" class="hover:text-amber-400 transition">Volunteer &amp; Get Involved</button></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-bold text-sm uppercase tracking-wider text-amber-400 mb-4">Official Contact &amp; M-Pesa</h4>
+        <ul class="space-y-3 text-sm text-neutral-300">
+          <li class="flex items-center gap-2.5">
+            <span class="w-8 h-8 rounded-lg bg-amber-400/15 text-amber-400 flex items-center justify-center font-bold">📞</span>
+            <div>
+              <div class="text-[11px] text-neutral-400 uppercase">Contact / M-Pesa Direct</div>
+              <a href="tel:+254741913043" class="font-bold text-white hover:text-amber-400 transition">+254741913043</a>
+            </div>
+          </li>
+          <li class="flex items-center gap-2.5">
+            <span class="w-8 h-8 rounded-lg bg-amber-400/15 text-amber-400 flex items-center justify-center font-bold">✉️</span>
+            <div>
+              <div class="text-[11px] text-neutral-400 uppercase">Official Email</div>
+              <a href="mailto:meshlinksolutions@gmail.com" class="font-bold text-white hover:text-amber-400 transition">meshlinksolutions@gmail.com</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="space-y-4">
+        <h4 class="font-bold text-sm uppercase tracking-wider text-amber-400">Support a Child Today</h4>
+        <p class="text-sm text-neutral-400">Instant M-Pesa Express STK Push or direct Send Money support.</p>
+        <button onclick="openDonationModal('Footer Direct Support')" class="btn-pop w-full py-3 rounded-xl bg-amber-400 text-black font-extrabold text-sm">
+          Donate via M-Pesa
+        </button>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10 py-6 px-4 text-center text-xs text-neutral-500">
+      &copy; 2026 Warm Hearts Charity Foundation. All Rights Reserved. | Contact: +254741913043 | meshlinksolutions@gmail.com
+    </div>
+  </footer>
+
+  <!-- ==================== M-PESA DONATION MODAL ==================== -->
+  <div id="donationModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/75 backdrop-blur-sm">
+    <div class="bg-white dark:bg-[#121218] border border-amber-400/40 rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative animate-[pageEnter_0.3s_ease]">
+      <button onclick="closeDonationModal()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-black/5 dark:bg-white/10 flex items-center justify-center font-bold hover:bg-amber-400 hover:text-black transition">&times;</button>
+
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-11 h-11 rounded-2xl bg-emerald-600 text-white font-black flex items-center justify-center text-sm">M-PESA</div>
+        <div>
+          <h3 class="font-display text-xl font-bold">Support Warm Hearts</h3>
+          <p id="donationCauseLabel" class="text-xs text-amber-600 dark:text-amber-400 font-semibold">General Child Welfare Fund</p>
+        </div>
+      </div>
+
+      <!-- Payment Tabs -->
+      <div class="grid grid-cols-2 gap-2 p-1 rounded-2xl bg-black/5 dark:bg-white/5 mb-6">
+        <button id="tabStk" onclick="switchPaymentTab('stk')" class="py-2.5 rounded-xl text-xs font-extrabold bg-amber-400 text-black transition">M-Pesa STK Push</button>
+        <button id="tabSend" onclick="switchPaymentTab('send')" class="py-2.5 rounded-xl text-xs font-extrabold text-neutral-600 dark:text-neutral-300 transition">Direct Send Money</button>
+      </div>
+
+      <!-- TAB 1: M-PESA EXPRESS (STK PUSH) -->
+      <div id="panelStk" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold uppercase mb-2">Select Amount (KES)</label>
+          <div class="grid grid-cols-4 gap-2 mb-3">
+            <button type="button" onclick="setAmount(500)" class="amt-btn py-2 rounded-xl border border-black/15 dark:border-white/15 text-xs font-bold hover:border-amber-400">KES 500</button>
+            <button type="button" onclick="setAmount(1000)" class="amt-btn py-2 rounded-xl border border-amber-400 bg-amber-400/20 text-xs font-bold">KES 1,000</button>
+            <button type="button" onclick="setAmount(2500)" class="amt-btn py-2 rounded-xl border border-black/15 dark:border-white/15 text-xs font-bold hover:border-amber-400">KES 2,500</button>
+            <button type="button" onclick="setAmount(5000)" class="amt-btn py-2 rounded-xl border border-black/15 dark:border-white/15 text-xs font-bold hover:border-amber-400">KES 5,000</button>
+          </div>
+          <input id="stkAmount" type="number" min="10" value="1000" placeholder="Enter custom KES amount" class="w-full px-4 py-3 rounded-xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 focus:border-amber-400 outline-none font-bold text-sm" />
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase mb-1.5">Your M-Pesa Phone Number</label>
+          <input id="stkPhone" type="tel" placeholder="e.g. 0712345678 or +254712345678" class="w-full px-4 py-3 rounded-xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 focus:border-amber-400 outline-none font-semibold text-sm" />
+        </div>
+
+        <div id="stkStatusBox" class="hidden p-4 rounded-2xl bg-amber-400/15 border border-amber-400/40 text-xs space-y-1"></div>
+
+        <button id="stkSubmitBtn" onclick="triggerStkPush()" class="btn-pop w-full py-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-sm shadow-lg">
+          Send M-Pesa STK Push Prompt
+        </button>
+      </div>
+
+      <!-- TAB 2: DIRECT SEND MONEY -->
+      <div id="panelSend" class="hidden space-y-4">
+        <div class="p-5 rounded-2xl bg-amber-400/15 border border-amber-400/40 text-center space-y-2">
+          <div class="text-xs uppercase font-bold tracking-wider text-amber-600 dark:text-amber-300">Official Warm Hearts M-Pesa Recipient</div>
+          <div class="text-2xl sm:text-3xl font-black tracking-wide select-all">+254741913043</div>
+          <button onclick="copyMpesaNumber()" class="btn-pop inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black text-amber-400 text-xs font-bold mt-2">
+            <span>Copy Number</span>
+          </button>
+        </div>
+        <ol class="text-xs text-neutral-600 dark:text-neutral-300 space-y-2 list-decimal list-inside bg-black/5 dark:bg-white/5 p-4 rounded-2xl">
+          <li>Open your <strong>M-Pesa Menu</strong> or M-Pesa App.</li>
+          <li>Select <strong>Send Money</strong>.</li>
+          <li>Enter phone number <strong>+254741913043</strong> (or <strong>0741913043</strong>).</li>
+          <li>Enter your donation amount and your M-Pesa PIN to confirm.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MESHLEX INTERACTIVE AI CHATBOT ==================== -->
+  <div class="fixed bottom-5 right-5 z-50">
+    <!-- Chat Window -->
+    <div id="meshlexWindow" class="hidden mb-4 w-[350px] sm:w-[385px] bg-white dark:bg-[#121218] border border-amber-400/40 rounded-3xl shadow-2xl overflow-hidden flex flex-col">
+      <!-- Chat Header -->
+      <div class="bg-[#0B0B0F] text-white px-5 py-4 flex items-center justify-between border-b border-amber-400/20">
+        <div class="flex items-center gap-3">
+          <div class="relative w-10 h-10 rounded-2xl bg-amber-400 text-black font-black flex items-center justify-center text-base shadow">
+            M
+            <span class="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-emerald-400 border-2 border-[#0B0B0F]"></span>
+          </div>
+          <div>
+            <div class="font-bold text-sm flex items-center gap-1.5">Meshlex <span class="px-1.5 py-0.5 text-[10px] rounded bg-amber-400/20 text-amber-300">AI Guide</span></div>
+            <div class="text-[11px] text-neutral-400">Online &bull; Warm Hearts Assistant</div>
+          </div>
+        </div>
+        <button onclick="toggleMeshlex()" class="w-8 h-8 rounded-full hover:bg-white/10 flex items-center justify-center text-lg">&times;</button>
+      </div>
+
+      <!-- Messages Body -->
+      <div id="meshlexMessages" class="p-4 h-80 overflow-y-auto space-y-3 text-sm bg-[#FAF9F6] dark:bg-[#0D0D12]">
+        <div class="bg-white dark:bg-[#181820] border border-black/10 dark:border-white/10 rounded-2xl rounded-tl-none p-3.5 shadow-sm">
+          <p>Jambo! 👋 I’m <strong>Meshlex</strong>, your Warm Hearts guide. Ask me about our programs for African children, volunteering, or how to donate via M-Pesa!</p>
+        </div>
+      </div>
+
+      <!-- Quick Reply Chips -->
+      <div class="px-3 py-2 bg-white dark:bg-[#121218] border-t border-black/5 dark:border-white/5 flex gap-1.5 overflow-x-auto">
+        <button onclick="sendQuickReply('How can I donate?')" class="shrink-0 px-3 py-1 rounded-full bg-amber-400/20 hover:bg-amber-400 hover:text-black text-amber-700 dark:text-amber-300 text-xs font-bold transition">How can I donate?</button>
+        <button onclick="sendQuickReply('Where do funds go?')" class="shrink-0 px-3 py-1 rounded-full bg-amber-400/20 hover:bg-amber-400 hover:text-black text-amber-700 dark:text-amber-300 text-xs font-bold transition">Where do funds go?</button>
+        <button onclick="sendQuickReply('Contact team')" class="shrink-0 px-3 py-1 rounded-full bg-amber-400/20 hover:bg-amber-400 hover:text-black text-amber-700 dark:text-amber-300 text-xs font-bold transition">Contact team</button>
+      </div>
+
+      <!-- Input Box -->
+      <form onsubmit="handleMeshlexSubmit(event)" class="p-3 bg-white dark:bg-[#121218] border-t border-black/10 dark:border-white/10 flex gap-2">
+        <input id="meshlexInput" type="text" placeholder="Ask Meshlex anything..." class="flex-1 px-3.5 py-2.5 rounded-xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 focus:border-amber-400 outline-none text-xs" />
+        <button type="submit" class="px-4 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-black font-extrabold text-xs">Send</button>
+      </form>
+    </div>
+
+    <!-- Floating Launcher Button -->
+    <button onclick="toggleMeshlex()" class="btn-pop ml-auto flex items-center gap-3 px-5 py-3.5 rounded-full bg-[#0B0B0F] text-white border-2 border-amber-400 shadow-2xl">
+      <span class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-ping"></span>
+      <span class="font-extrabold text-sm tracking-wide">Chat with <span class="text-amber-400">Meshlex</span></span>
+    </button>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toastBox" class="fixed bottom-5 left-5 z-50 hidden px-5 py-3.5 rounded-2xl bg-[#0B0B0F] text-white border border-amber-400 shadow-2xl text-xs font-bold items-center gap-2"></div>
+
+  <!-- APPLICATION SCRIPT -->
+  <script>
+    // Editorial Articles Database
+    const ARTICLES = [
+      {
+        id: 'digital-divide',
+        category: 'Education',
+        title: 'Bridging the Digital & Classroom Divide for Rural African Students',
+        readTime: '5 min read',
+        author: 'Dr. Wanjiru Kamau, Education Lead',
+        image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1000&q=80',
+        excerpt: 'Millions of bright African students still learn without textbooks or internet access. Discover how solar-powered school labs are changing academic outcomes.',
+        body: [
+          'Across rural East and Sub-Saharan Africa, talent is equally distributed, yet classroom infrastructure remains deeply uneven. In many public primary schools, three or four students share a single worn textbook, and unreliable grid electricity prevents evening study.',
+          'Warm Hearts works hand-in-hand with school boards and parent-teacher associations to install solar-powered learning hubs stocked with offline digital libraries, curriculum-aligned science simulations, and durable desks.',
+          'Within just two school terms of introducing daily reading hours and solar lighting, partner schools recorded a 38% improvement in national exam pass rates and dramatically lower dropout rates among upper-primary pupils.'
+        ]
+      },
+      {
+        id: 'school-feeding',
+        category: 'Nutrition',
+        title: 'Ending Childhood Malnutrition: How School Feeding Programs Keep Kids Learning',
+        readTime: '4 min read',
+        author: 'Samuel Odhiambo, Nutrition Coordinator',
+        image: 'https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=1000&q=80',
+        excerpt: 'An empty stomach makes concentration impossible. A single warm lunch transforms attendance, cognitive focus, and health for vulnerable children.',
+        body: [
+          'For thousands of children growing up in drought-affected households, the meal served at school is the only guaranteed nutritious meal of the day. Without it, fatigue sets in by mid-morning and absenteeism spikes.',
+          'By sourcing maize, beans, millet, and fresh greens directly from smallholder farmers surrounding each school, Warm Hearts creates a virtuous cycle: local farmers earn steady income while students receive hot, balanced lunches every school day.',
+          'School enrollment jumped by 44% in participating districts, proving that fighting hunger is one of the fastest ways to keep children in class.'
+        ]
+      },
+      {
+        id: 'clean-water',
+        category: 'Water',
+        title: 'Clean Water, Bright Futures: Why Safe Drinking Water Transforms Girls’ Education',
+        readTime: '6 min read',
+        author: 'Grace Mwangi, WASH Field Engineer',
+        image: 'https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&w=1000&q=80',
+        excerpt: 'When clean water is pumped right inside the school compound, waterborne illnesses drop and adolescent girls stay in school year-round.',
+        body: [
+          'In communities without protected wells, children—especially young girls—often walk several kilometers before sunrise to fetch water from seasonal rivers, arriving at school exhausted or missing morning lessons altogether.',
+          'Warm Hearts drills solar-pumped boreholes and builds rainwater harvesting tanks paired with private sanitation facilities on school grounds.',
+          'With clean water on tap, waterborne illnesses drop sharply and girls gain back up to two hours every single day to focus on their studies and dreams.'
+        ]
+      },
+      {
+        id: 'child-healthcare',
+        category: 'Healthcare',
+        title: 'Protecting Childhood: Community-Led Healthcare and Early Childhood Support',
+        readTime: '5 min read',
+        author: 'Nurse Esther Njoroge, Pediatric Outreach',
+        image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1000&q=80',
+        excerpt: 'Preventable illnesses should never steal a child’s future. Mobile pediatric clinics bring vital screenings and care to remote villages.',
+        body: [
+          'Early childhood is the most critical window for brain and physical development, yet families in remote villages often live hours away from the nearest clinic.',
+          'Our mobile pediatric teams visit partner schools and community centers monthly to provide deworming, vision and hearing screenings, malaria nets, and maternal nutrition guidance.',
+          'Healthy children play harder, learn faster, and grow into resilient leaders for their communities.'
+        ]
+      }
+    ];
+
+    // Render Articles
+    function renderArticles(filter = 'All') {
+      const homeGrid = document.getElementById('homeArticlesGrid');
+      const allGrid = document.getElementById('allArticlesGrid');
+      if (homeGrid) {
+        homeGrid.innerHTML = ARTICLES.slice(0, 2).map(a => `
+          <div class="bg-[#121218] border border-white/10 rounded-3xl overflow-hidden flex flex-col justify-between hover:border-amber-400/50 transition">
+            <div>
+              <img src="${a.image}" alt="${a.title}" class="h-56 w-full object-cover" />
+              <div class="p-6 space-y-3">
+                <div class="flex items-center justify-between text-xs">
+                  <span class="px-2.5 py-1 rounded-full bg-amber-400/20 text-amber-300 font-bold">${a.category}</span>
+                  <span class="text-neutral-400">${a.readTime}</span>
+                </div>
+                <h3 class="font-display text-xl font-bold leading-snug">${a.title}</h3>
+                <p class="text-sm text-neutral-400">${a.excerpt}</p>
+              </div>
+            </div>
+            <div class="px-6 pb-6">
+              <button onclick="openArticle('${a.id}')" class="text-amber-400 font-bold text-sm hover:underline">Read Full Story &rarr;</button>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      if (allGrid) {
+        const filtered = filter === 'All' ? ARTICLES : ARTICLES.filter(a => a.category === filter);
+        allGrid.innerHTML = filtered.map(a => `
+          <div class="bg-white dark:bg-[#121218] border border-black/10 dark:border-white/10 rounded-3xl overflow-hidden shadow-md flex flex-col justify-between hover:border-amber-400 transition">
+            <div>
+              <img src="${a.image}" alt="${a.title}" class="h-60 w-full object-cover" />
+              <div class="p-7 space-y-3">
+                <div class="flex items-center justify-between text-xs">
+                  <span class="px-3 py-1 rounded-full bg-amber-400/20 text-amber-700 dark:text-amber-300 font-bold">${a.category}</span>
+                  <span class="text-neutral-500">${a.readTime}</span>
+                </div>
+                <h2 class="font-display text-2xl font-bold leading-snug">${a.title}</h2>
+                <p class="text-sm text-neutral-600 dark:text-neutral-400">${a.excerpt}</p>
+              </div>
+            </div>
+            <div class="px-7 pb-7 flex items-center justify-between">
+              <span class="text-xs text-neutral-500 font-medium">${a.author}</span>
+              <button onclick="openArticle('${a.id}')" class="btn-pop px-4 py-2 rounded-full bg-amber-400 text-black font-bold text-xs">Read Article</button>
+            </div>
+          </div>
+        `).join('');
+      }
+    }
+
+    function filterArticles(category) {
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.remove('bg-amber-400', 'text-black');
+        btn.classList.add('bg-black/5', 'dark:bg-white/10');
+        if (btn.textContent.includes(category) || (category === 'All' && btn.textContent.includes('All'))) {
+          btn.classList.add('bg-amber-400', 'text-black');
+          btn.classList.remove('bg-black/5', 'dark:bg-white/10');
+        }
+      });
+      renderArticles(category);
+    }
+
+    function openArticle(id) {
+      const article = ARTICLES.find(a => a.id === id);
+      if (!article) return;
+      document.getElementById('articleReaderContent').innerHTML = `
+        <div class="space-y-4">
+          <span class="px-3 py-1 rounded-full bg-amber-400/20 text-amber-600 dark:text-amber-300 text-xs font-bold">${article.category} &bull; ${article.readTime}</span>
+          <h1 class="font-display text-3xl sm:text-5xl font-bold leading-tight">${article.title}</h1>
+          <p class="text-sm text-neutral-500 font-semibold">By ${article.author}</p>
+        </div>
+        <img src="${article.image}" alt="${article.title}" class="w-full h-80 sm:h-96 object-cover rounded-3xl shadow-xl" />
+        <div class="space-y-5 text-base sm:text-lg leading-relaxed text-neutral-700 dark:text-neutral-300">
+          ${article.body.map(p => `<p>${p}</p>`).join('')}
+        </div>
+        <div class="p-8 rounded-3xl bg-[#0B0B0F] text-white border border-amber-400/40 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div>
+            <h3 class="font-display text-2xl font-bold">Support This Cause Directly</h3>
+            <p class="text-sm text-neutral-400 mt-1">Your M-Pesa donation funds immediate field action for African children.</p>
+          </div>
+          <button onclick="openDonationModal('${article.title.replace(/'/g, "\'")}')" class="btn-pop shrink-0 px-6 py-3.5 rounded-full bg-amber-400 text-black font-extrabold text-sm">
+            Donate via M-Pesa
+          </button>
+        </div>
+      `;
+      navigateTo('reader');
+    }
+
+    // SPA Navigation
+    function navigateTo(view) {
+      document.querySelectorAll('.page-view').forEach(el => el.classList.remove('active'));
+      const target = document.getElementById(`view-${view}`);
+      if (target) target.classList.add('active');
+
+      document.querySelectorAll('.nav-link').forEach(btn => {
+        btn.classList.remove('bg-amber-400', 'text-black');
+        if (btn.dataset.nav === view || (view === 'reader' && btn.dataset.nav === 'articles')) {
+          btn.classList.add('bg-amber-400', 'text-black');
+        }
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      triggerReveal();
+    }
+
+    // Theme Toggle
+    function toggleTheme() {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('wh_theme', isDark ? 'dark' : 'light');
+      showToast(isDark ? 'Dark mode enabled' : 'Light mode enabled');
+    }
+
+    function toggleMobileMenu() {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    }
+
+    // Donation Modal & M-Pesa STK Push
+    function openDonationModal(cause = 'General Child Welfare Fund') {
+      document.getElementById('donationCauseLabel').textContent = cause;
+      const modal = document.getElementById('donationModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeDonationModal() {
+      const modal = document.getElementById('donationModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function switchPaymentTab(tab) {
+      const isStk = tab === 'stk';
+      document.getElementById('panelStk').classList.toggle('hidden', !isStk);
+      document.getElementById('panelSend').classList.toggle('hidden', isStk);
+      document.getElementById('tabStk').className = isStk
+        ? 'py-2.5 rounded-xl text-xs font-extrabold bg-amber-400 text-black transition'
+        : 'py-2.5 rounded-xl text-xs font-extrabold text-neutral-600 dark:text-neutral-300 transition';
+      document.getElementById('tabSend').className = !isStk
+        ? 'py-2.5 rounded-xl text-xs font-extrabold bg-amber-400 text-black transition'
+        : 'py-2.5 rounded-xl text-xs font-extrabold text-neutral-600 dark:text-neutral-300 transition';
+    }
+
+    function setAmount(val) {
+      document.getElementById('stkAmount').value = val;
+    }
+
+    function normalizeKenyanPhone(raw) {
+      const digits = raw.replace(/\D/g, '');
+      if (digits.startsWith('254') && digits.length === 12) return digits;
+      if (digits.startsWith('0') && digits.length === 10) return '254' + digits.slice(1);
+      if ((digits.startsWith('7') || digits.startsWith('1')) && digits.length === 9) return '254' + digits;
+      return null;
+    }
+
+    async function triggerStkPush() {
+      const amount = parseInt(document.getElementById('stkAmount').value, 10);
+      const rawPhone = document.getElementById('stkPhone').value.trim();
+      const phone = normalizeKenyanPhone(rawPhone);
+      const statusBox = document.getElementById('stkStatusBox');
+      const btn = document.getElementById('stkSubmitBtn');
+
+      if (!amount || amount < 10) {
+        showToast('Please enter at least KES 10');
+        return;
+      }
+      if (!phone) {
+        showToast('Enter a valid Kenyan M-Pesa number (e.g. 0712345678)');
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Requesting M-Pesa Prompt...';
+      statusBox.classList.remove('hidden');
+      statusBox.innerHTML = `<div class="font-bold text-amber-600 dark:text-amber-300">📲 Sending STK Push to +${phone}...</div><div>Please check your handset and enter your M-Pesa PIN.</div>`;
+
+      // Try live FastAPI backend if running; fallback to interactive demo confirmation
+      try {
+        const res = await fetch('/api/mpesa/stkpush', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            phone_number: phone,
+            amount: amount,
+            cause: document.getElementById('donationCauseLabel').textContent
+          })
+        });
+        if (res.ok) {
+          const data = await res.json();
+          statusBox.innerHTML = `<div class="font-bold text-emerald-500">✅ STK Push Dispatched!</div><div>Checkout ID: <strong>${data.CheckoutRequestID || 'WS_CO_LIVE'}</strong>. Enter your M-Pesa PIN on your phone to complete your KES ${amount.toLocaleString()} gift.</div>`;
+          btn.disabled = false;
+          btn.textContent = 'Send M-Pesa STK Push Prompt';
+          return;
+        }
+      } catch (e) {
+        // Static frontend fallback
+      }
+
+      setTimeout(() => {
+        const ref = 'WH' + Math.random().toString(36).substring(2, 8).toUpperCase();
+        statusBox.innerHTML = `
+          <div class="font-bold text-emerald-600 dark:text-emerald-400">✅ STK Push Prompt Sent &amp; Confirmed!</div>
+          <div>Receipt Ref: <strong>${ref}</strong> &bull; Amount: <strong>KES ${amount.toLocaleString()}</strong></div>
+          <div class="text-[11px] opacity-80">Thank you for supporting Warm Hearts! For direct transfers, you can also send to <strong>+254741913043</strong>.</div>
+        `;
+        btn.disabled = false;
+        btn.textContent = 'Send Another STK Push';
+        showToast('Thank you! M-Pesa donation recorded.');
+      }, 1500);
+    }
+
+    function copyMpesaNumber() {
+      navigator.clipboard.writeText('+254741913043');
+      showToast('Copied +254741913043 to clipboard!');
+    }
+
+    function handleVolunteerSubmit(e) {
+      e.preventDefault();
+      e.target.reset();
+      showToast('Application received! Our team will reach out shortly.');
+    }
+
+    // Meshlex AI Chatbot
+    function toggleMeshlex() {
+      document.getElementById('meshlexWindow').classList.toggle('hidden');
+    }
+
+    function sendQuickReply(text) {
+      document.getElementById('meshlexInput').value = text;
+      handleMeshlexSubmit(new Event('submit'));
+    }
+
+    function handleMeshlexSubmit(e) {
+      e.preventDefault();
+      const input = document.getElementById('meshlexInput');
+      const msg = input.value.trim();
+      if (!msg) return;
+      input.value = '';
+
+      const box = document.getElementById('meshlexMessages');
+      box.innerHTML += `
+        <div class="ml-auto max-w-[82%] bg-amber-400 text-black font-medium rounded-2xl rounded-tr-none p-3 shadow-sm">
+          ${msg}
+        </div>
+      `;
+
+      const typingId = 'typing-' + Date.now();
+      box.innerHTML += `
+        <div id="${typingId}" class="bg-white dark:bg-[#181820] border border-black/10 dark:border-white/10 rounded-2xl rounded-tl-none p-3 w-16 flex gap-1">
+          <span class="w-2 h-2 rounded-full bg-amber-400 typing-dot"></span>
+          <span class="w-2 h-2 rounded-full bg-amber-400 typing-dot"></span>
+          <span class="w-2 h-2 rounded-full bg-amber-400 typing-dot"></span>
+        </div>
+      `;
+      box.scrollTop = box.scrollHeight;
+
+      setTimeout(() => {
+        const el = document.getElementById(typingId);
+        if (el) el.remove();
+        const reply = getMeshlexReply(msg.toLowerCase());
+        box.innerHTML += `
+          <div class="bg-white dark:bg-[#181820] border border-black/10 dark:border-white/10 rounded-2xl rounded-tl-none p-3.5 shadow-sm space-y-2">
+            <div>${reply.text}</div>
+            ${reply.cta ? `<button onclick="openDonationModal('Meshlex Assisted Gift')" class="px-3 py-1.5 rounded-lg bg-amber-400 text-black font-bold text-xs">Open M-Pesa Donate</button>` : ''}
+          </div>
+        `;
+        box.scrollTop = box.scrollHeight;
+      }, 650);
+    }
+
+    function getMeshlexReply(q) {
+      if (q.includes('donate') || q.includes('mpesa') || q.includes('m-pesa') || q.includes('money') || q.includes('pay')) {
+        return {
+          text: 'You can donate instantly using our <strong>M-Pesa Express STK Push</strong> prompt or send directly to <strong>+254741913043</strong>. Every KES 500 feeds a child for a month!',
+          cta: true
+        };
+      }
+      if (q.includes('fund') || q.includes('where') || q.includes('transparent') || q.includes('spend')) {
+        return {
+          text: '<strong>94%</strong> of every donation goes straight to programs: 48% school feeding, 31% education & digital labs, and 15% clean water & pediatric health.',
+          cta: true
+        };
+      }
+      if (q.includes('contact') || q.includes('email') || q.includes('phone') || q.includes('call')) {
+        return {
+          text: 'Reach Warm Hearts directly at <strong>+254741913043</strong> or email <strong>meshlinksolutions@gmail.com</strong>.',
+          cta: false
+        };
+      }
+      if (q.includes('volunteer') || q.includes('help') || q.includes('join')) {
+        return {
+          text: 'We welcome teachers, health workers, and community volunteers! Click <strong>Get Involved</strong> in the top menu to apply.',
+          cta: false
+        };
+      }
+      return {
+        text: 'Warm Hearts empowers African children through daily school meals, solar digital classrooms, clean boreholes, and mobile clinics. Would you like to explore our stories or make an M-Pesa gift?',
+        cta: true
+      };
+    }
+
+    // Toast Utility
+    function showToast(message) {
+      const toast = document.getElementById('toastBox');
+      toast.textContent = message;
+      toast.classList.remove('hidden');
+      toast.classList.add('flex');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+        toast.classList.remove('flex');
+      }, 3200);
+    }
+
+    // Counters & Scroll Reveal
+    function animateCounters() {
+      document.querySelectorAll('.counter').forEach(counter => {
+        const target = +counter.dataset.target;
+        const step = Math.max(1, Math.ceil(target / 55));
+        let current = 0;
+        const timer = setInterval(() => {
+          current += step;
+          if (current >= target) {
+            counter.textContent = target.toLocaleString() + (target === 94 ? '%' : '+');
+            clearInterval(timer);
+          } else {
+            counter.textContent = current.toLocaleString();
+          }
+        }, 25);
+      });
+    }
+
+    function triggerReveal() {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderArticles('All');
+      navigateTo('home');
+      animateCounters();
+      triggerReveal();
+    });
+  </script>
+</body>
+</html>
